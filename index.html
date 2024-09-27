@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boy's Group</title>
+</head>
+<body>
+
+    <div>
+        <center>
+            <img src="boys.jpeg" width="130">
+        </center>
+    </div>
+
+    <div>
+        <center>
+            <h1>The Boy's Group</h1>
+        </center>
+        <br>
+        <center>
+            <h3>The special website made for chatting.</h3>
+        </center>
+    </div>
+
+    <div>
+        <form id="form1">
+            Enter name: <input type="text" id="sender_name" name="sender_name" placeholder="Enter your name"><br>
+            Enter text: <input type="text" id="text_msg" name="text_msg" placeholder="Enter your text to forward"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <br><br>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("form1").addEventListener("submit", function(event) {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Gather input values using the correct IDs
+            const name = document.getElementById("sender_name").value;
+            const message = document.getElementById("text_msg").value;
+
+            // Append the values to the "demo" paragraph instead of overwriting
+            document.getElementById("demo").innerHTML += name + " : " + message + "<br>";
+
+            // Clear input fields after submission
+            document.getElementById("sender_name").value = "";
+            document.getElementById("text_msg").value = "";
+        });
+    </script>
+
+</body>
+</html>
